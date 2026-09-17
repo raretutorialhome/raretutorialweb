@@ -60,7 +60,7 @@ export function Footer() {
               <a href={contactConfig.whatsapp.href()} className="focus-ring flex items-center gap-2.5 text-white/75 hover:text-gold">
                 <MessageCircle className="h-4 w-4 text-gold" aria-hidden /> {contactConfig.whatsapp.display}
               </a>
-              <a href={contactConfig.email.href} className="focus-ring flex items-center gap-2.5 text-white/75 hover:text-gold">
+              <a href={contactConfig.email.href} target="_blank" rel="noopener noreferrer" className="focus-ring flex items-center gap-2.5 text-white/75 hover:text-gold">
                 <Mail className="h-4 w-4 text-gold" aria-hidden /> {contactConfig.email.address}
               </a>
               <div className="flex items-start gap-2.5">

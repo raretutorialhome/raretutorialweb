@@ -3,10 +3,10 @@
  * from this file (or its NEXT_PUBLIC_* env override) instead of hard-coding
  * phone numbers, WhatsApp links or the address anywhere else.
  */
-const phonePrimary = process.env.NEXT_PUBLIC_CONTACT_PHONE_PRIMARY ?? "+919830228998";
-const phoneSecondary = process.env.NEXT_PUBLIC_CONTACT_PHONE_SECONDARY ?? "+918335051385";
-const whatsapp = process.env.NEXT_PUBLIC_CONTACT_WHATSAPP ?? "+919830228998";
-const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "raretutorialhome@gmail.com";
+const phonePrimary = process.env.NEXT_PUBLIC_CONTACT_PHONE_PRIMARY || "+919830228998";
+const phoneSecondary = process.env.NEXT_PUBLIC_CONTACT_PHONE_SECONDARY || "+918335051385";
+const whatsapp = process.env.NEXT_PUBLIC_CONTACT_WHATSAPP || "+919830228998";
+const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "raretutorialhome@gmail.com";
 
 const defaultWhatsappMessage = "Hello, I'd like to know more about the courses offered at RARE.";
 
@@ -29,7 +29,8 @@ export const contactConfig = {
   },
   email: {
     address: email,
-    href: `mailto:${email}`,
+    // Opens Gmail's compose window with RARE's address prefilled as "To".
+    href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`,
   },
   officeHours: {
     days: "Monday – Saturday",

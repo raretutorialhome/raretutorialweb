@@ -63,7 +63,11 @@ export default function ContactPage() {
               return (
                 <Reveal key={card.title} index={i}>
                   {card.href ? (
-                    <a href={card.href} className="focus-ring block h-full">
+                    <a
+                      href={card.href}
+                      {...(card.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
+                      className="focus-ring block h-full"
+                    >
                       {content}
                     </a>
                   ) : (
